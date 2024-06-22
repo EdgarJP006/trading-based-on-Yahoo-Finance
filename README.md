@@ -1,3 +1,9 @@
+[![en](https://img.shields.io/badge/lang-en-blue.svg)](https://github.com/EdgarJP006/trading-based-on-Yahoo-Finance/blob/main/README.md)
+[![pt-br](https://img.shields.io/badge/lang-pt--br-green.svg)](https://github.com/EdgarJP006/trading-based-on-Yahoo-Finance/blob/main/locale/README-pt.md)
+[![es](https://img.shields.io/badge/lang-es-yellow.svg)](https://github.com/EdgarJP006/trading-based-on-Yahoo-Finance/blob/main/locale/README-es.md)
+[![zh-CN](https://img.shields.io/badge/lang-zh--br-red.svg)](https://github.com/EdgarJP006/trading-based-on-Yahoo-Finance/blob/main/locale/README-zh_CN.md)
+
+
 # Analysis of the Data Science Applications in Finance Project
 This project focuses on the development of trading algorithms based on historical data from Yahoo Finance, using data science to predict financial market behavior. The main objective is to explore the effectiveness of two prediction models: linear regression and Prophet, to generate more informed trading strategies.
 
