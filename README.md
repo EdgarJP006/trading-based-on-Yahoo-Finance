@@ -83,3 +83,97 @@ Proposals for Future Work:
 - Scikit-learn: https://scikit-learn.org/
 - Prophet: https://facebook.github.io/prophet/
 ## 8. Annexes
+Other Trending Tickers
+| Symbol | Company Name |
+|---|---|
+| NVD | NVIDIA Corporation |
+| SIR | Sirius XM Holdings Inc. |
+| AAPL | Apple Inc. |
+| BAC | Bank of America Corporation |
+| T | AT&T Inc. |
+| MARA | Marathon Digital Holdings, Inc. |
+| CSCO | Cisco Systems, Inc. |
+| ADT | ADT Inc. |
+| AMD | Advanced Micro Devices, Inc. |
+| PLTR | Palantir Technologies Inc. |
+| TSLA | Tesla, Inc. |
+| WBD | Warner Bros. Discovery, Inc. |
+| MU | Micron Technology, Inc. |
+| INTC | Intel Corporation |
+| AMZN | Amazon.com, Inc. |
+| SWN | Southwestern Energy Company |
+| BMY | Bristol-Myers Squibb Company |
+| GOLD | Barrick Gold Corporation |
+| F | Ford Motor Company |
+| NU | Nu Holdings Ltd. |
+| CMA | Comerica Incorporated |
+| GOOGL | Alphabet Inc. |
+| GDDY | GoDaddy Inc. |
+| CLSK | CleanSpark, Inc. |
+| BTG | B2Gold Corp. |
+| RHI | Robert Half Inc. |
+| NWG | NatWest Group plc |
+| KMI | Kinder Morgan, Inc. |
+| ITUB | Itaú Unibanco Holding S.A. |
+| SNAP | Snap Inc. |
+| PFE | Pfizer Inc. |
+| GOOG | Alphabet Inc. |
+| KO | The Coca-Cola Company |
+| CX | CEMEX, S.A.B. de C.V. |
+| COP | ConocoPhillips |
+| SLB | Schlumberger Limited |
+| KVU | Kenvue Inc. |
+| RIOT | Riot Platforms, Inc. |
+| GME | GameStop Corp. |
+| SOFI | SoFi Technologies, Inc. |
+| HPE | Hewlett Packard Enterprise Company |
+| INFY | Infosys Limited |
+| NVAX | Novavax, Inc. |
+| QCOM | QUALCOMM Incorporated |
+| VALE | Vale S.A. |
+| NIO | NIO Inc. |
+| ABEV | Ambev S.A. |
+| RIVN | Rivian Automotive, Inc. |
+| OXY | Occidental Petroleum Corporation |
+| CVX | Chevron Corporation |
+| PATH | UiPath Inc. |
+| WFC | Wells Fargo & Company |
+| CMCSA | Comcast Corporation |
+| AAL | American Airlines Group Inc. |
+| HBAN | Huntington Bancshares Incorporated |
+| CCL | Carnival Corporation & plc |
+| MSFT | Microsoft Corporation |
+| RIG | Transocean Ltd. |
+| PCG | PG&E Corporation |
+| FCX | Freeport-McMoRan Inc. |
+| EXC | Exelon Corporation |
+| GILD | Gilead Sciences, Inc. |
+| MRO | Marathon Oil Corporation |
+| CDE | Coeur Mining, Inc. |
+| AWELL | Welltower Inc. |
+| LYFT | Lyft, Inc. |
+| ARO | Roivant Sciences Ltd. |
+| TSM | Taiwan Semiconductor Manufacturing Company Limited |
+| KR | The Kroger Co. |
+| GM | General Motors Company |
+| XOM | Exxon Mobil Corporation |
+| HOOD | Robinhood Markets, Inc. |
+| DKNG | DraftKings Inc. |
+| KHC | The Kraft Heinz Company |
+| META | Meta Platforms, Inc. |
+| VZ | Verizon Communications Inc. |
+| CSX | CSX Corporation |
+| ALT | Arcadia Lithium plc |
+| SBUX | Starbucks Corporation |
+| KKR | KKR & Co. Inc. |
+| WMT | Walmart Inc. |
+| DELL | Dell Technologies Inc. |
+| DJT | Trump Media & Technology Group Corp. |
+| SRPT | Sarepta Therapeutics, Inc. |
+| KGCI | Kinross Gold Corporation |
+| IQ | iQIYI, Inc. |
+| ARM | Arm Holdings plc |
+| AMCR | Amcor plc |
+| LCID | Lucid Group, Inc. |
+| NI | NiSource Inc. |
+
