@@ -1,0 +1,68 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% EJEMPLOS
+
+\section*{Ejemplos de Citas, Ecuaciones, Figuras y Tablas}
+
+\subsection*{Citas}
+
+Así se debe citar en texto \citet{Rybicki1986}. Así se debe citar en paréntesis \citep{Wilson1957} y así se citan varios autores (\citealp{Wilson1957, Konstantinova-Antova2010, Rybicki1986}).\\
+
+\lipsum[1-1]
+
+\subsection*{Código}
+
+Si usó algún código esta es la forma correcta de escribirlo: \textsc{phoenix}.\\
+
+\lipsum[1-1]
+
+\subsection*{Ecuaciones}
+
+Así se escriben ecuaciones. En la Ecuación \ref{eq:Black_Body}.\\
+
+\begin{equation}
+	B(\lambda, T)=\dfrac{2 h c^{2}}{\lambda^{5}}\dfrac{1}{e^{\frac{hc}{k\lambda T}}-1}
+	\label{eq:Black_Body}
+\end{equation}
+
+\vspace{0.5cm}
+
+\noindent where $h=6.63\times10^{-34}$ Js is Planck's constant; $k=1.38\times10^{-23}$ JK$^{-1}$ is the Boltzmann constant; $c=3\times10^{8}$ ms$^{-1}$ is the speed of light and $T$ is the temperature. This type of radiation is called \textit{blackbody radiation}.
+
+\subsection*{Figuras}
+
+%Así se insertan figuras. Ver Fig. \ref{fig:Black_Body}.
+
+%\figura{Figuras/Black_Body.pdf}{width=0.8\textwidth}{Título de la figura.}{fig:Black_Body}
+
+\subsection*{Tablas}
+
+Así se insertan tablas. Ver Tabla \ref{table:Stellar_Sample}.
+
+\begin{table}[!hbt]
+	\renewcommand{\arraystretch}{1.25}
+	\footnotesize
+	\centering
+	\begin{minipage}{0.8\textwidth}
+		\caption{Título de la tabla.}
+		\label{table:Stellar_Sample}
+	\end{minipage}
+	\scalebox{0.8}{
+		\begin{threeparttable}
+			\begin{tabular}{lllccc}
+				\hline
+				N	&	Star$^a$	&	Name$^b$	&	Epoch (YY/MM)	&	$\left\langle S/N\right\rangle$ (Red)	&	$\left\langle S/N\right\rangle$ (Blue)	\\ \hline
+				1	&	HD8512	&	$\theta$ Cet	&	2015/11	&	149	&	181	\\
+				2	&	HD10476	&	107 Psc	&	2015/10	&	193	&	72	\\
+				3	&	HD18925	&	$\gamma$ Per	&	2019/11	&	304	&	113	\\
+				4	&	HD20630	&	$\kappa$ Cet	&	2021/08	&	140	&	51	\\
+				5	&	HD23249	&	$\delta$ Eri (Rana)	&	2021/02	&	187	&	143	\\
+				\hline
+			\end{tabular}
+			\begin{tablenotes}
+				\footnotesize
+				\item[a] Nota 1.
+				\item[b] Nota 2.
+			\end{tablenotes}
+		\end{threeparttable}
+	}
+\end{table}

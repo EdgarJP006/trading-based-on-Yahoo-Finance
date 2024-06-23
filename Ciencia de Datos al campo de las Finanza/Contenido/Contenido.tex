@@ -1,0 +1,121 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CONTENIDO
+
+\section{Resumen}
+Este proyecto se centra en el desarrollo de algoritmos de trading basados en datos históricos de Yahoo Finance, utilizando la ciencia de datos para predecir el comportamiento del mercado financiero de Apple Inc. del periodo del 2020 hasta 2024, El objetivo principal es explorar la eficacia de dos modelos de predicción: regresión lineal y Prophet, para generar estrategias de trading más informadas. La motivación detrás del proyecto surge de la creciente cantidad de datos financieros disponibles y la necesidad de herramientas avanzadas para analizarlos y extraer información valiosa. Utilizando técnicas de inteligencia artificial y aprendizaje automático, este proyecto busca proporcionar tener una visión competitiva para tomar decisiones rentables.
+
+El desarrollo del algoritmo de trading comienza con la preparación y limpieza de datos, descargando información histórica de precios de acciones de Yahoo Finance y transformando variables necesarias. Dos modelos predictivos son implementados: uno de regresión lineal, que establece una relación lineal entre la fecha y el precio de cierre de las acciones, y el modelo Prophet, que maneja la estacionalidad y tendencias en los datos. Ambos modelos se entrenan y validan utilizando conjuntos de datos divididos en entrenamiento y prueba. Los resultados muestran que el modelo Prophet proporciona una mayor precisión en sus predicciones, con un error cuadrático medio (MSE) significativamente más bajo y un coeficiente de determinación (R²) cercano a 1, lo que indica un excelente ajuste a los datos.
+
+Finalmente, el proyecto no solo demuestra la aplicación práctica de la ciencia de datos en la predicción de precios de acciones, sino que también ofrece estrategias de trading basadas en las predicciones generadas. Por ejemplo, el modelo de regresión lineal puede utilizarse para generar señales de compra o venta según la tendencia prevista, mientras que Prophet es útil para estrategias de inversión a largo plazo debido a su capacidad para predecir aumentos o disminuciones futuros en los precios de cierre. Las conclusiones del proyecto destacan las ventajas y limitaciones de los modelos utilizados, sugiriendo futuras mejoras como el uso de modelos más avanzados como redes neuronales profundas e incorporando variables macroeconómicas adicionales para una mayor precisión en las predicciones.
+
+\section{Introducción}
+El trading financiero ha cobrado una importancia crucial en la economía global actual, proporcionando liquidez y estabilidad a los mercados y permitiendo a los inversores capitalizar oportunidades de crecimiento económico \cite{b1}. Con la digitalización de las finanzas y la disponibilidad masiva de datos, la capacidad de analizar y predecir movimientos del mercado se ha vuelto indispensable \cite{b2}. Las decisiones informadas y estratégicas son esenciales para maximizar el rendimiento y minimizar el riesgo, destacando la necesidad de herramientas avanzadas que puedan procesar grandes volúmenes de datos en tiempo real \cite{b3}.
+
+La motivación detrás de este proyecto surge precisamente de esta creciente cantidad de datos financieros disponibles y la necesidad de herramientas para analizarlos y extraer información valiosa \cite{b4}. La inteligencia artificial (IA) y la ciencia de datos ofrecen soluciones efectivas para este problema, permitiendo a los inversores tomar decisiones más precisas y rentables.
+
+En este contexto, el presente proyecto se centra en el desarrollo de algoritmos de trading basados en datos históricos de Yahoo Finance, utilizando la ciencia de datos para predecir el comportamiento del mercado financiero de Apple Inc., Específicamente, se exploran la eficacia de dos modelos de predicción: regresión lineal y Prophet, para generar estrategias de trading más informadas. Estos modelos se entrenan utilizando datos históricos de precios de cierre de acciones, con el objetivo de predecir movimientos futuros del mercado y sugerir decisiones de inversión \cite{b7}.
+
+El uso de técnicas de machine learning como la regresión lineal y Prophet en el trading permite no solo automatizar el análisis de datos, sino también mejorar la precisión de las predicciones. La regresión lineal ofrece una forma sencilla de modelar la relación entre variables, mientras que Prophet, desarrollado por Facebook, es particularmente útil para manejar datos con fuertes componentes estacionales y tendencias no lineales. La combinación de estos enfoques permite una mejor comprensión y anticipación de los movimientos del mercado, proporcionando herramientas valiosas para los inversores en su toma de decisiones \cite{b10}.
+\subsection{Estrategias de Trading Basadas en Ciencia de Datos}
+Las estrategias de trading basadas en ciencia de datos utilizan algoritmos que analizan datos históricos para predecir movimientos futuros del mercado. Estas estrategias se pueden automatizar, aumentando la eficiencia y reduciendo el riesgo de errores humanos.
+El proyecto utilizará datos históricos de empresas cotizadas obtenidos de Yahoo Finance, incluyendo precios de cierre, volumen de transacciones y otros indicadores financieros. Estos datos se analizarán y se utilizarán para construir modelos predictivos.
+
+\section{Algoritmo de Trading con Regresión Lineal y Prophet}
+\subsection{Preprocesamiento de Datos}
+\begin{itemize}
+    \item \textbf{Preparación de Datos:} Se utiliza la librería yfinance para descargar datos históricos de Apple Inc. (AAPL) desde el 1 de enero de 2020 hasta el 1 de enero de 2024.
+    \item \textbf{Conversión de Fecha:} Se convierte la columna “Date” a un valor numérico “DateNum” que representa el número de días desde el 1 de enero de 1. Esto permite utilizar la fecha como variable independiente en el modelo de regresión lineal.
+    \item \textbf{División de Datos:} Se divide el conjunto de datos en conjuntos de entrenamiento y prueba (80\% entrenamiento, 20\% prueba) para evaluar el rendimiento del modelo.
+\end{itemize}
+\section{Selección de Variables}
+\label{sec:seleccion_variables}
+\begin{itemize}
+    \item Variable Dependiente: “Close” (precio de cierre de las acciones).
+    \item Variable Independiente: “DateNum” (número de días desde el 1 de enero de 1).
+\end{itemize}
+ 
+\section{Entrenamiento del Modelo}
+\label{sec:entrenamiento_modelo}
+Regresión Lineal: Se utiliza la clase LinearRegression de scikit-learn para entrenar un modelo de regresión lineal con los datos de entrenamiento. El modelo aprende la relación lineal entre la fecha y el precio de cierre.
+
+
+\section{Validación del Modelo}
+\label{sec:validacion_modelo}
+\begin{itemize}
+    \item Predicciones: Se utilizan los datos de prueba para realizar predicciones del precio de cierre utilizando el modelo entrenado.
+    \item Métricas de Evaluación: Se calculan el error cuadrático medio (MSE) y el coeficiente de determinación (R²) para evaluar la precisión del modelo.
+\end{itemize}
+
+\section{Interpretación de los Resultados}
+\label{sec:interpretacion_resultados}
+
+Para el modelo de Regresión Lineal se obtienen las métricas:
+\begin{itemize}
+    \item  Mean Squared Error (MSE): 283.44141934748717 \\
+    – El MSE representa la media de las diferencias cuadradas entre los valores reales y los valores predichos. \\
+    – Un MSE bajo indica que el modelo está haciendo buenas predicciones. En este caso, el MSE es relativamente alto, lo que sugiere que el modelo no es tan preciso en la predicción del precio de cierre. \\
+    \item R\^2 Score: 0.7032079298869716 \\
+    – El R² indica la proporción de la varianza en la variable dependiente (precio de cierre) que es explicada por la variable independiente (fecha).\\
+    – Un R² cercano a 1 indica que el modelo explica la mayor parte de la varianza en los datos. En este caso, el R² es de 0.70, lo que significa que el modelo explica aproximadamente el 70\% de la varianza en el precio de cierre.
+\end{itemize}
+Para el modelo con Prophet:
+\begin{itemize}
+    \item Mean Squared Error (MSE): 46.376 \\
+    – El MSE representa la media de las diferencias cuadradas entre los valores reales y los valores predichos por el modelo Prophet. \\
+    – Un MSE bajo indica que el modelo está haciendo predicciones muy cercanas a los valores reales. En este caso, el MSE de 46.376 indica que las predicciones de Prophet están muy cerca de los precios reales de cierre.
+    \item R\^2 Score: 0.958
+    – El R² indica la proporción de la varianza en el precio de cierre que es explicada por la fecha según el modelo Prophet. \\
+    – Un R² cercano a 1 sugiere que el modelo explica la mayoría de la variabilidad en los precios de cierre. El valor de 0.958 implica que el modelo Prophet explica alrededor del 95.8\% de la variabilidad en los precios de cierre, lo cual es muy alto y sugiere un ajuste excelente del modelo a los datos.
+\end{itemize}
+
+\section{Gráfico de Resultados}
+\figura{Figuras/Imagen1.png}{width=1\textwidth}{Gráfico de datos reales y predicciones}{fig:Imagen1}
+\begin{itemize}
+    \item	La gráfica \ref{fig:Imagen1} muestra los precios reales de cierre (línea azul) y las predicciones del modelo (puntos rojos).
+\item	Se puede observar que el modelo de regresión lineal no se ajusta perfectamente a los datos reales, especialmente en los períodos de mayor volatilidad.
+\item	La línea roja de la predicción es una línea recta, lo que refleja la naturaleza lineal del modelo.
+
+\end{itemize}
+\figura{Figuras/Imagen3.png}{width=1\textwidth}{Gráfico de datos reales y regresión lineal con predicciones futuras}{fig:Imagen3}
+\figura{Figuras/Imagen2.png}{width=1\textwidth}{Gráfico de resultados de Prophet}{fig:Imagen2}
+
+\begin{itemize}
+    \item	La gráfica \ref{fig:Imagen2} muestra los precios reales de cierre (puntos negros) y las predicciones del modelo (línea azul). Los puntos negros representan los datos históricos del precio, mientras que la línea azul representa la predicción del modelo Prophet.
+\item	El área sombreada alrededor de la línea azul representa el rango de error o incertidumbre de la predicción. Esto significa que el modelo Prophet predice que el precio estará dentro de ese rango con una cierta probabilidad.
+\item	Se puede observar que el modelo se ajusta bastante bien a los datos reales, pero hay algunos períodos donde la predicción no es tan precisa. El modelo Prophet es un modelo estacional, por lo que se puede observar que la predicción es más precisa en los períodos donde la estacionalidad es más pronunciada.
+
+\end{itemize}
+
+\section{Estrategias de Trading}
+\begin{itemize}
+    \item \textbf{Regresión Lineal:} El modelo de regresión lineal puede utilizarse para generar señales de compra/venta basadas en la tendencia del precio de cierre.\\
+–	Si el modelo predice un precio de cierre superior al precio actual, se puede considerar una señal de compra.\\
+–	Si el modelo predice un precio de cierre inferior al precio actual, se puede considerar una señal de venta.
+\item \textbf{Prophet:} El modelo Prophet puede utilizarse para predecir el precio de cierre en el futuro, lo que puede ser útil para estrategias de inversión a largo plazo. \\
+–	Si el modelo predice un aumento del precio de cierre en el futuro, se puede considerar una inversión. \\
+–	Si el modelo predice una disminución del precio de cierre en el futuro, se puede considerar evitar la inversión.
+
+\section{Consideraciones Adicionales}
+\begin{itemize}
+    \item	Limitaciones del Modelo: Los modelos de regresión lineal y Prophet son simples y pueden no capturar todas las complejidades del mercado financiero.
+\item	Optimización del Modelo: El modelo se puede optimizar utilizando diferentes parámetros y variables para mejorar su precisión.
+\item	Análisis de Riesgo: Es importante realizar un análisis de riesgo antes de implementar cualquier estrategia de trading basada en modelos predictivos.
+
+\end{itemize}
+
+
+\end{itemize}
+\section{Conclusión}
+El proyecto demuestra cómo la ciencia de datos puede aplicarse eficazmente en el ámbito financiero para desarrollar estrategias de trading. Los modelos de regresión lineal y Prophet ofrecen enfoques complementarios para la predicción de precios de acciones, cada uno con sus propias fortalezas y limitaciones. La regresión lineal muestra una relación directa entre el tiempo y el precio de las acciones, siendo útil para identificar tendencias lineales. Por otro lado, Prophet, con su capacidad para manejar datos con fuertes componentes estacionales y tendencias no lineales, se destaca en situaciones donde la estacionalidad juega un papel crucial en la evolución del mercado.
+
+Sin embargo, este proyecto también pone de relieve varias limitaciones significativas. La disponibilidad y calidad de los datos pueden afectar la precisión de las predicciones; los datos históricos pueden no siempre reflejar las condiciones actuales del mercado debido a cambios económicos imprevistos. Además, la simplicidad de los modelos utilizados, aunque permite una interpretación más fácil, puede no capturar la complejidad inherente del mercado financiero. La necesidad de ajustar continuamente los algoritmos para adaptarse a las condiciones cambiantes del mercado es otra limitación crítica, ya que los modelos deben ser lo suficientemente flexibles para incorporar nuevos datos y patrones emergentes \cite{b1}.
+
+Para abordar estas limitaciones, se proponen varias direcciones para trabajos futuros. Una línea de investigación es explorar el uso de modelos más avanzados, como redes neuronales profundas, que tienen el potencial de capturar relaciones más complejas en los datos y mejorar la precisión de las predicciones. Estos modelos pueden aprovechar grandes volúmenes de datos y múltiples variables para ofrecer predicciones más robustas. Además, la incorporación de más variables macroeconómicas y sentimentales en los modelos de predicción puede proporcionar una visión más holística del mercado, ayudando a anticipar movimientos basados en una amplia gama de factores que afectan el comportamiento del mercado financiero \cite{b4}.
+
+
+
+
+
+
+
+
