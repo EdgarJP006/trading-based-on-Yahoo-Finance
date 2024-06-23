@@ -1,79 +1,181 @@
-# Analysis of the Data Science Applications in Finance Project
-This project focuses on the development of trading algorithms based on historical data from Yahoo Finance, using data science to predict financial market behavior. The main objective is to explore the effectiveness of two prediction models: linear regression and Prophet, to generate more informed trading strategies.
+[![en](https://img.shields.io/badge/lang-en-blue.svg)](https://github.com/EdgarJP006/trading-based-on-Yahoo-Finance/blob/main/README.md)
+[![pt-br](https://img.shields.io/badge/lang-pt--br-green.svg)](https://github.com/EdgarJP006/trading-based-on-Yahoo-Finance/blob/main/locale/README-pt.md)
+[![es](https://img.shields.io/badge/lang-es-yellow.svg)](https://github.com/EdgarJP006/trading-based-on-Yahoo-Finance/blob/main/locale/README-es.md)
+[![zh-CN](https://img.shields.io/badge/lang-zh--br-red.svg)](https://github.com/EdgarJP006/trading-based-on-Yahoo-Finance/blob/main/locale/README-zh_CN.md)
 
-## 1. Introduction
-The motivation behind the project stems from the increasing amount of financial data available and the need for tools to analyze it and extract valuable information. Artificial intelligence (AI) and data science offer solutions to this problem, allowing investors to make more accurate and profitable decisions.
-## 2. Data Science Applications in Finance
-AI plays a key role in the analysis of financial data, identifying patterns and trends that can influence investment decisions. Machine learning, a branch of AI, allows predicting market movements with greater accuracy, providing a significant competitive advantage in trading.
-The impact of the use of AI in finance is global. Decisions based on data analytics can influence investor behavior worldwide, affecting global economic stability and growth. The ability to anticipate and respond quickly to market fluctuations can mitigate the effects of economic crises.
-## 3. Trading Strategies Based on Data Science
-Data science-based trading strategies use algorithms that analyze historical data to predict future market movements. These strategies can be automated, increasing efficiency and reducing the risk of human error.
-The project will use historical data on listed companies obtained from Yahoo Finance, including closing prices, trading volume and other financial indicators. This data will be analyzed and used to build predictive models.
-## 4. Development of the Trading Algorithm with Linear Regression and Prophet
-### 4.1 Data Preprocessing
-- Data Preparation: The yfinance library is used to download historical data from Apple Inc (AAPL) from January 1, 2020 to January 1, 2024. 
-You can search for other actual data at https://finance.yahoo.com/lookup/
-Just look for the company, copy its Symbol (ID) example Netflix's is NFLX or Mercado Libre's is MELI and paste it in the line. 
-`data = yf.download('AAPL', start='2020-01-01', end='2024-01-01')`
-- Date Conversion: The "Date" column is converted to a numeric value "DateNum" representing the number of days since January 1, 1. This allows the date to be used as an independent variable in the linear regression model.
-- Data Splitting: The data set is split into training and test sets (80% training, 20% test) to evaluate the performance of the model.
-### 4.2 Variable Selection
-- Dependent Variable: "Close" (stock closing price).
-- Independent Variable: "DateNum" (number of days since January 1, 1).
-### 4.3 Model Training
-- Linear Regression: The LinearRegression class of scikit-learn is used to train a linear regression model with the training data. The model learns the linear relationship between date and closing price.
-### 4.4 Model Validation.
-- Predictions: Test data are used to make predictions of the closing price using the trained model.
-- Evaluation Metrics: The mean square error (MSE) and the coefficient of determination (R²) are calculated to evaluate the accuracy of the model.
-### 4.5 Interpretation of Results
-First for the Linear Regression model the metrics are obtained:
-- Mean Squared Error (MSE): 283.44141934748717.
-- The MSE represents the mean squared differences between the actual values and the predicted values.
-- A low MSE indicates that the model is making good predictions. In this case, the MSE is relatively high, suggesting that the model is not as accurate in predicting the closing price.
-- R^2 Score: 0.7032079298869716
-- The R² indicates the proportion of the variance in the dependent variable (closing price) that is explained by the independent variable (date).
-- An R² close to 1 indicates that the model explains most of the variance in the data. In this case, the R² is 0.70, which means that the model explains approximately 70% of the variance in the closing price.
-On the other hand, for the model with Prophet:
-- Mean Squared Error (MSE): 46.376
-- The MSE represents the mean squared differences between the actual values and the values predicted by the Prophet model.
-- A low MSE indicates that the model is making predictions very close to the actual values. In this case, the MSE of 46.376 indicates that the Prophet predictions are very close to the actual closing prices.
-- R^2 Score: 0.958
-- The R² indicates the proportion of the variance in the closing price that is explained by the date according to the Prophet model.
-- An R² close to 1 suggests that the model explains most of the variance in the closing price.
--  The value of 0.958 implies that the Prophet model explains about 95.8% of the variability in closing prices, which is very high and suggests an excellent fit of the model to the data.
-### 4.6 Results Graph
+
+# 金融数据科学应用项目分析
+本项目侧重于基于雅虎财经的历史数据开发交易算法，利用数据科学预测金融市场行为。主要目标是探索线性回归和先知这两种预测模型的有效性，以生成更明智的交易策略。
+
+## 1. 项目介绍
+该项目的动机源于可用金融数据量的不断增加，以及对分析这些数据并提取有价值信息的工具的需求。人工智能（AI）和数据科学为这一问题提供了解决方案，使投资者能够做出更准确、更有利的决策。
+## 2. 数据科学在金融领域的应用
+人工智能在分析金融数据、识别可影响投资决策的模式和趋势方面发挥着关键作用。机器学习作为人工智能的一个分支，可以更准确地预测市场动向，在交易中提供显著的竞争优势。
+在金融领域使用人工智能的影响是全球性的。基于数据分析的决策可以影响全球投资者的行为，从而影响全球经济的稳定和增长。预测和快速应对市场波动的能力可以减轻经济危机的影响。
+## 3. 基于数据科学的交易策略
+基于数据科学的交易策略使用分析历史数据的算法来预测未来的市场走势。这些策略可以实现自动化，从而提高效率并降低人为错误的风险。
+该项目将使用从雅虎财经获得的上市公司历史数据，包括收盘价、交易量和其他财务指标。这些数据将被分析并用于建立预测模型。
+## 4. 利用线性回归和先知开发交易算法
+### 4.1 数据预处理
+- 数据准备： 使用 yfinance 库下载苹果公司 (AAPL) 2020 年 1 月 1 日至 2024 年 1 月 1 日的历史数据。
+您可以在 https://finance.yahoo.com/lookup/ 上搜索其他实际数据。
+只需查找公司，复制其代码（ID），例如 Netflix 的代码是 NFLX，Mercado Libre 的代码是 MELI，然后将其粘贴到一行中。
+数据 = yf.download('AAPL', start='2020-01-01', end='2024-01-01')`。
+- 日期转换： 日期 "列转换为数值 "DateNum"，表示自 1 月 1 日以来的天数。 这样，日期就可以用作线性回归模型中的自变量。
+- 数据分割： 数据集分为训练集和测试集（80% 训练，20% 测试），以评估模型的性能。
+#### 4.2 变量选择
+- 因变量： "收盘价"（股票收盘价）。
+- 自变量： "DateNum"（1 月 1 日以来的天数）。
+#### 4.3 模型训练
+- 线性回归： scikit-learn 的 LinearRegression 类用于使用训练数据训练线性回归模型。该模型学习日期和收盘价之间的线性关系。
+### 4.4 模型验证。
+- 预测： 测试数据用于使用训练好的模型预测收盘价。
+- 评估指标： 计算均方误差 (MSE) 和决定系数 (R²)，以评估模型的准确性。
+### 4.5 结果解释
+首先得出线性回归模型的指标：
+- 平均平方误差（MSE）：283.44141934748717。
+- MSE 表示实际值与预测值之间的均方差。
+- MSE 值越低，说明模型的预测效果越好。在本例中，MSE 相对较高，表明模型预测收盘价的准确性不高。
+- R^2 分数：0.7032079298869716
+- R² 表示因变量（收盘价）中由自变量（日期）解释的方差比例。
+- R² 接近 1 表示模型解释了数据中的大部分方差。在本例中，R² 为 0.70，这意味着模型解释了收盘价中约 70% 的方差。
+
+另一方面，对于带有先知的模型，平均平方误差（MSE）：46.376：
+- 平均平方误差 (MSE)：46.376
+- MSE 表示实际值与先知模型预测值之间的均方差。
+- MSE 值越低，说明模型的预测值越接近实际值。在本例中，46.376 的 MSE 表示先知预测值非常接近实际收盘价。
+- R^2 分数： 0.958
+- R² 表示根据先知模型用日期解释的收盘价方差比例。
+- R² 接近 1 表示模型可以解释收盘价中的大部分差异。
+- 0.958 的值意味着先知模型解释了约 95.8%的收盘价变异，这是一个非常高的值，表明模型与数据的拟合度非常高。
+#### 4.6 结果图
  
 1717390646742
-- The graph shows the actual closing prices (blue line) and the model predictions (red dots).
-- It can be seen that the linear regression model does not fit the actual data perfectly, especially in periods of higher volatility.
-- The red line of the prediction is a straight line, reflecting the linear nature of the model.
+- 该图显示了实际收盘价（蓝线）和模型预测值（红点）。
+- 可以看出，线性回归模型并不能完全拟合实际数据，尤其是在波动较大的时期。
+- 预测的红线是一条直线，反映了模型的线性性质。
  
 1717390826962
-- The graph shows the actual closing prices (black dots) and the model predictions (blue line). The black dots represent the historical price data, while the blue line represents the Prophet model prediction.
-- The shaded area around the blue line represents the range of error or uncertainty of the prediction. This means that the Prophet model predicts that the price will be within that range with a certain probability.
-- It can be seen that the model fits the actual data quite well, but there are some periods where the prediction is not as accurate. The Prophet model is a seasonal model, so it can be observed that the prediction is more accurate in periods where the seasonality is more pronounced.
-### 4.7 Trading Strategies
-- Linear Regression: The linear regression model can be used to generate buy/sell signals based on the closing price trend.
-- If the model predicts a closing price higher than the current price, it can be considered a buy signal.
-- If the model predicts a closing price lower than the current price, it can be considered a sell signal.
-- Prophet: The Prophet model can be used to predict the closing price in the future, which can be useful for long-term investment strategies.
-- If the model predicts an increase in the closing price in the future, it can be considered a reversal.
-- If the model predicts a decrease in the closing price in the future, an investment can be considered to be avoided.
-### 4.8 Additional Considerations
-- Model Limitations: The linear regression and Prophet models are simple and may not capture all the complexities of the financial market.
-- Model Optimization: The model can be optimized using different parameters and variables to improve its accuracy.
-- Risk Analysis: It is important to perform a risk analysis before implementing any trading strategy based on predictive models.
-## 5. Conclusions and Future Work
-The project demonstrates how data science can be effectively applied in the financial arena to develop trading strategies. Linear regression and Prophet models offer complementary approaches to stock price prediction, each with their own strengths and limitations.
-Limitations:
-- Availability and quality of data.
-- Simplicity of the models used.
-- Need to continually adjust algorithms to adapt to changing market conditions.
-Proposals for Future Work:
-- Explore the use of more advanced models, such as deep neural networks.
-- Incorporate more macroeconomic and sentimental variables in prediction models.
-## 7. References
-- Yahoo Finance: https://finance.yahoo.com/
+- 图中显示了实际收盘价（黑点）和模型预测值（蓝线）。黑点代表历史价格数据，蓝线代表先知模型预测。
+- 蓝线周围的阴影区域代表预测的误差范围或不确定性。这意味着先知模型预测价格将以一定的概率处于该范围内。
+- 可以看出，该模型与实际数据非常吻合，但在某些时段的预测并不准确。先知模型是一个季节性模型，因此可以观察到，在季节性比较明显的时期，预测会更准确。
+### 4.7 交易策略
+- 线性回归： 线性回归模型可用于根据收盘价趋势生成买入/卖出信号。
+- 如果模型预测的收盘价高于当前价格，则可视为买入信号。
+- 如果模型预测的收盘价低于当前价格，则可视为卖出信号。
+- 先知： 先知模型可用于预测未来的收盘价，这对长期投资策略非常有用。
+- 如果模型预测未来收盘价上涨，则可视为反转信号。
+- 如果模型预测未来收盘价下跌，则可考虑避免投资。
+### 4.8 其他考虑因素
+- 模型局限性： 线性回归模型和先知模型比较简单，可能无法反映金融市场的所有复杂情况。
+- 模型优化： 可以使用不同的参数和变量对模型进行优化，以提高其准确性。
+- 风险分析： 在实施任何基于预测模型的交易策略之前，进行风险分析非常重要。
+## 5. 结论和未来工作
+该项目展示了数据科学如何有效地应用于金融领域，以制定交易策略。线性回归和先知模型为股价预测提供了互补的方法，它们各有自己的优势和局限性。
+局限性：
+- 数据的可用性和质量。
+- 所用模型的简单性。
+- 需要不断调整算法以适应不断变化的市场条件。
+未来工作建议：
+- 探索使用更先进的模型，如深度神经网络。
+- 在预测模型中纳入更多宏观经济和情感变量。
+## 7. 参考文献
+- 雅虎财经：https://finance.yahoo.com/
 - Scikit-learn: https://scikit-learn.org/
-- Prophet: https://facebook.github.io/prophet/
-## 8. Annexes
+- 先知：https://facebook.github.io/prophet/
+## 8. 附件
+其他热门股票
+| 公司名称
+|---|---|
+| Symbol | Company Name |
+|---|---|
+| NVD | NVIDIA Corporation |
+| SIR | Sirius XM Holdings Inc. |
+| AAPL | Apple Inc. |
+| BAC | Bank of America Corporation |
+| T | AT&T Inc. |
+| MARA | Marathon Digital Holdings, Inc. |
+| CSCO | Cisco Systems, Inc. |
+| ADT | ADT Inc. |
+| AMD | Advanced Micro Devices, Inc. |
+| PLTR | Palantir Technologies Inc. |
+| TSLA | Tesla, Inc. |
+| WBD | Warner Bros. Discovery, Inc. |
+| MU | Micron Technology, Inc. |
+| INTC | Intel Corporation |
+| AMZN | Amazon.com, Inc. |
+| SWN | Southwestern Energy Company |
+| BMY | Bristol-Myers Squibb Company |
+| GOLD | Barrick Gold Corporation |
+| F | Ford Motor Company |
+| NU | Nu Holdings Ltd. |
+| CMA | Comerica Incorporated |
+| GOOGL | Alphabet Inc. |
+| GDDY | GoDaddy Inc. |
+| CLSK | CleanSpark, Inc. |
+| BTG | B2Gold Corp. |
+| RHI | Robert Half Inc. |
+| NWG | NatWest Group plc |
+| KMI | Kinder Morgan, Inc. |
+| ITUB | Itaú Unibanco Holding S.A. |
+| SNAP | Snap Inc. |
+| PFE | Pfizer Inc. |
+| GOOG | Alphabet Inc. |
+| KO | The Coca-Cola Company |
+| CX | CEMEX, S.A.B. de C.V. |
+| COP | ConocoPhillips |
+| SLB | Schlumberger Limited |
+| KVU | Kenvue Inc. |
+| RIOT | Riot Platforms, Inc. |
+| GME | GameStop Corp. |
+| SOFI | SoFi Technologies, Inc. |
+| HPE | Hewlett Packard Enterprise Company |
+| INFY | Infosys Limited |
+| NVAX | Novavax, Inc. |
+| QCOM | QUALCOMM Incorporated |
+| VALE | Vale S.A. |
+| NIO | NIO Inc. |
+| ABEV | Ambev S.A. |
+| RIVN | Rivian Automotive, Inc. |
+| OXY | Occidental Petroleum Corporation |
+| CVX | Chevron Corporation |
+| PATH | UiPath Inc. |
+| WFC | Wells Fargo & Company |
+| CMCSA | Comcast Corporation |
+| AAL | American Airlines Group Inc. |
+| HBAN | Huntington Bancshares Incorporated |
+| CCL | Carnival Corporation & plc |
+| MSFT | Microsoft Corporation |
+| RIG | Transocean Ltd. |
+| PCG | PG&E Corporation |
+| FCX | Freeport-McMoRan Inc. |
+| EXC | Exelon Corporation |
+| GILD | Gilead Sciences, Inc. |
+| MRO | Marathon Oil Corporation |
+| CDE | Coeur Mining, Inc. |
+| AWELL | Welltower Inc. |
+| LYFT | Lyft, Inc. |
+| ARO | Roivant Sciences Ltd. |
+| TSM | Taiwan Semiconductor Manufacturing Company Limited |
+| KR | The Kroger Co. |
+| GM | General Motors Company |
+| XOM | Exxon Mobil Corporation |
+| HOOD | Robinhood Markets, Inc. |
+| DKNG | DraftKings Inc. |
+| KHC | The Kraft Heinz Company |
+| META | Meta Platforms, Inc. |
+| VZ | Verizon Communications Inc. |
+| CSX | CSX Corporation |
+| ALT | Arcadia Lithium plc |
+| SBUX | Starbucks Corporation |
+| KKR | KKR & Co. Inc. |
+| WMT | Walmart Inc. |
+| DELL | Dell Technologies Inc. |
+| DJT | Trump Media & Technology Group Corp. |
+| SRPT | Sarepta Therapeutics, Inc. |
+| KGCI | Kinross Gold Corporation |
+| IQ | iQIYI, Inc. |
+| ARM | Arm Holdings plc |
+| AMCR | Amcor plc |
+| LCID | Lucid Group, Inc. |
+| NI | NiSource Inc. |
