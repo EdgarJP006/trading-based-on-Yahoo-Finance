@@ -48,12 +48,12 @@ On the other hand, for the model with Prophet:
 - An R² close to 1 suggests that the model explains most of the variance in the closing price.
 -  The value of 0.958 implies that the Prophet model explains about 95.8% of the variability in closing prices, which is very high and suggests an excellent fit of the model to the data.
 ### 4.6 Results Graph
- 
+ ![shows the actual closing prices](https://raw.githubusercontent.com/EdgarJP006/trading-based-on-Yahoo-Finance/main/Ciencia%20de%20Datos%20al%20campo%20de%20las%20Finanza/Figuras/Imagen1.png) 
 1717390646742
 - The graph shows the actual closing prices (blue line) and the model predictions (red dots).
 - It can be seen that the linear regression model does not fit the actual data perfectly, especially in periods of higher volatility.
 - The red line of the prediction is a straight line, reflecting the linear nature of the model.
- 
+ ![The graph shows the actual closing prices](https://raw.githubusercontent.com/EdgarJP006/trading-based-on-Yahoo-Finance/main/Ciencia%20de%20Datos%20al%20campo%20de%20las%20Finanza/Figuras/Imagen3.png) 
 1717390826962
 - The graph shows the actual closing prices (black dots) and the model predictions (blue line). The black dots represent the historical price data, while the blue line represents the Prophet model prediction.
 - The shaded area around the blue line represents the range of error or uncertainty of the prediction. This means that the Prophet model predicts that the price will be within that range with a certain probability.
